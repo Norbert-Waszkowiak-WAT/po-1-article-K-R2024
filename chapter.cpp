@@ -30,6 +30,6 @@ class Chapter{
     int getChapterNumber(){
         return chapternumber;
     }
-    vector
+    
 };
 #endif
