@@ -1,3 +1,4 @@
+#include <vector>
 #include "catch_amalgamated.hpp"
 #include "book.cpp"
 #include "chapter.cpp"

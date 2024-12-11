@@ -1,40 +1,38 @@
-#ifndef Book_H
-#define Book_H
+
+#ifndef BOOK_H
+#define BOOK_H
 #include <iostream>
 #include <string>
+#include <vector>
 #include "author.cpp"
 #include "chapter.cpp"
-#include "article.cpp"
+using namespace std;
 class Book{
-    private:
-        std::string title;
-        Author author;
-        int publicationYear;
-        std::vector<Chapter> chapters;
+   private:
+    int publicationYear;
+    string title;
+    vector<Chapter> chapters;
+    Author author;
+
     public:
-        Book():title(""), author(""), publicationYear(0), chapters(0){};
-        Book(std::string booktitle, Author bookauthor, int year, vector<Chapter> &bookchapters):title(booktitle),
-        author(bookauthor), publicationYear(year) , chapters(bookchapters){};
-        void addChapter(Chapter &chapter){
-            chapters.pushback(chapter);
-        }
-        void displayinfo(){
-            std::cout<<"OHIO SKIBIDI MOSTEK";
-        }
-        std::string getTitle(){
+           Book():
+    title(""), author(Author()),publicationYear(0), chapters({}) {};
+         Book(const string bookTitle, const Author &bookAuthor, int year, const vector<Chapter>&bookChapters):
+         title(bookTitle), author(bookAuthor), publicationYear(year), chapters(bookChapters) {};
+         void addChapter(const Chapter &chapter){
+                chapters.push_back(chapter);
+         };
+         string getTitle(){
             return title;
-        }
-        Author getAuthor(){
-            return author;
-        }
-        int getPublicationYear(){
-            return publicationYear;
-        }
-        std::vector<Chapter> getChapters(){
-            return chapters()
-        }
-
-
-
-};
-#endif
+         };
+            Author getAuthor(){
+                return author;
+            };
+            int getPublicationYear(){
+                return publicationYear;
+            };
+            vector<Chapter> getChapters(){
+                return chapters;
+            };
+            };
+    #endif
